@@ -12,6 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: volta-cli/action@v4
+
+      # Install system dependencies for midi (RtMidi needs ALSA headers)
+      - run: sudo apt-get update && sudo apt-get install -y libasound2-dev
+      
       - run: npm ci --no-audit
       - run: npm run lint --if-present
       - run: npm run prettier:check --if-present

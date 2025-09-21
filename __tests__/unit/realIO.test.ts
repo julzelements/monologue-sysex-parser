@@ -1,7 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import * as midiModule from '../../src/midi.js';
 
-describe('Monologue inputs and outputs', () => {
+const isCI = process.env.CI === 'true';
+
+(isCI ? describe.skip : describe)('Monologue inputs and outputs', () => {
   const MONO_INPUT_NAME = 'monologue KBD/KNOB';
   const MONO_OUTPUT_NAME = 'monologue SOUND';
 

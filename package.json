@@ -9,7 +9,6 @@
   "devDependencies": {
     "@eslint/js": "~9.17",
     "@types/eslint__js": "~8.42",
-    "@types/midi": "^2.0.3",
     "@types/node": "~20",
     "@typescript-eslint/parser": "~8.19",
     "@vitest/coverage-v8": "~2.1",

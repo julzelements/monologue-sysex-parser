@@ -1,4 +1,5 @@
-type MessageHandler = (deltaTime: number, message: number[]) => void;
+// tests/utils/fakeMidi.ts
+export type MessageHandler = (deltaTime: number, message: number[]) => void;
 
 export class FakeInput {
   private handlers: Record<string, MessageHandler[]> = {};
@@ -24,7 +25,7 @@ export class FakeInput {
     // no-op for tests
   }
 
-  ignoreTypes() {
+  ignoreTypes(_sysex = false, _timing = false, _activeSense = false) {
     // no-op
   }
 

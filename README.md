@@ -38,3 +38,9 @@ Run tests:
 * `tests/FakeMidi.ts` includes:
     * `emitMessage(deltaTime, message)` to simulate incoming messages
     * `.sent` on `FakeOutput` to inspect outgoing messages
+
+## Features
+- [ ] decodeSysex(buffer) → MonologuePatch
+- [ ] encodeSysex(patch) → Uint8Array
+- [x] getInputPorts() / getOutputPorts()
+- [ ] sendSysexToPort(portIndex, sysex)

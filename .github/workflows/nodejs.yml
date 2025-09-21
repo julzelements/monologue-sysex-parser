@@ -6,6 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      SKIP_HARDWARE_TESTS: true
+
     steps:
       - uses: actions/checkout@v4
       - uses: volta-cli/action@v4

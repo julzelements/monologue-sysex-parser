@@ -1,6 +1,6 @@
 import { describe, it, afterEach, beforeEach, vi, expect } from 'vitest';
 import { Delays, greeter } from '../../src/main.js';
-
+// Leaving these here a canary green tests
 describe('greeter function', () => {
   const name = 'John';
 

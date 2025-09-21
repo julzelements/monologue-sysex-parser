@@ -11,6 +11,5 @@ export default defineConfig({
       provider: 'v8',
       exclude: [...coverageConfigDefaults.exclude, 'build/**/*'],
     },
-    setupFiles: ['./vitest.setup.ts'],
   },
 });

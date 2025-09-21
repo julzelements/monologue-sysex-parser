@@ -34,10 +34,8 @@ Run tests:
 
 ### Implementation notes
 
-* The test environment sets `MIDI_FAKE=true` (via `vitest.setup.ts`) so `src/midi.ts` will create `FakeInput / FakeOutput`.
-* `tests/FakeMidi.ts` includes:
-    * `emitMessage(deltaTime, message)` to simulate incoming messages
-    * `.sent` on `FakeOutput` to inspect outgoing messages
+* Tests against a real connected monologue: `realIO.test.ts`
+* Tests against a mocked monologue: `fakeIO.test.ts`
 
 ## Features
 - [ ] decodeSysex(buffer) → MonologuePatch

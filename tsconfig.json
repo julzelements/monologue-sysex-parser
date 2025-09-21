@@ -20,5 +20,5 @@
     "noImplicitThis": false,
     "strictNullChecks": false,
   },
-  "include": ["src", "__tests__", "scripts/captureSysex.ts"]
+  "include": ["src", "__tests__", "scripts/**/*"]
 }

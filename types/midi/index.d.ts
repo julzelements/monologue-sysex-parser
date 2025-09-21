@@ -3,6 +3,7 @@ declare module 'midi' {
   import * as Stream from 'stream';
 
   export type MidiMessage = [number, number, number];
+  export type SysExMessage = number[];
   export type MidiCallback = (deltaTime: number, message: MidiMessage) => void;
 
   export class Input extends EventEmitter {
@@ -22,7 +23,7 @@ declare module 'midi' {
     openPort(port: number): void;
     openVirtualPort(port: string): void;
     send(message: MidiMessage): void;
-    sendMessage(message: MidiMessage): void;
+    sendMessage(message: MidiMessage | SysExMessage): void;
   }
 
   /** @deprecated */

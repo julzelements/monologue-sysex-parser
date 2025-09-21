@@ -18,7 +18,7 @@ Designed to be embedded in other apps (CLI, GUI, DAW helper, etc.) and later pub
 ## Installation (development)
 
 ```bash
-git clone <repo>
+git clone https://github.com/julzelements/monologue-sysex-parser
 cd monologue-sysex-parser
 npm install
 ```

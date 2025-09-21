@@ -1,4 +1,3 @@
-// tests/utils/fakeMidi.ts
 export type MessageHandler = (deltaTime: number, message: number[]) => void;
 
 export class FakeInput {
@@ -9,33 +8,35 @@ export class FakeInput {
     this.ports = ports;
   }
 
-  getPortCount() {
+  getPortCount(): number {
     return this.ports.length;
   }
 
-  getPortName(i: number) {
+  getPortName(i: number): string {
     return this.ports[i];
   }
 
-  openPort(_i: number) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  openPort(_i: number): void {
     // no-op for tests
   }
 
-  closePort() {
+  closePort(): void {
     // no-op for tests
   }
 
-  ignoreTypes(_sysex = false, _timing = false, _activeSense = false) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  ignoreTypes(_sysex = false, _timing = false, _activeSense = false): void {
     // no-op
   }
 
-  on(event: 'message', cb: MessageHandler) {
+  on(event: 'message', cb: MessageHandler): void {
     this.handlers[event] ??= [];
     this.handlers[event].push(cb);
   }
 
   /** Simulate a MIDI message arriving */
-  emitMessage(deltaTime: number, message: number[]) {
+  emitMessage(deltaTime: number, message: number[]): void {
     (this.handlers['message'] || []).forEach((cb) => cb(deltaTime, message));
   }
 }
@@ -48,24 +49,25 @@ export class FakeOutput {
     this.ports = ports;
   }
 
-  getPortCount() {
+  getPortCount(): number {
     return this.ports.length;
   }
 
-  getPortName(i: number) {
+  getPortName(i: number): string {
     return this.ports[i];
   }
 
-  openPort(_i: number) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  openPort(_i: number): void {
     // no-op
   }
 
-  closePort() {
+  closePort(): void {
     // no-op
   }
 
   /** Simulate sending a MIDI message */
-  sendMessage(message: number[]) {
+  sendMessage(message: number[]): void {
     this.sent.push({ port: 0, message });
   }
 }

@@ -48,6 +48,7 @@ export default tseslint.config(
     },
 
     rules: {
+      // @ts-ignore
       ...vitest.configs.recommended.rules,
     },
 
@@ -59,6 +60,7 @@ export default tseslint.config(
 
     languageOptions: {
       globals: {
+        // @ts-ignore
         ...vitest.environments.env.globals,
       },
     },
